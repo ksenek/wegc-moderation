@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Recipes website logo, a plate with fork and info on it" class="logo">
+        <h1>Recipes</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/recipes">All Recipes</a>
+            </li>
+			<li>
+				<a href="/easyrecipes">Easy Recipes</a>
+			</li>
+
+        </ul>
+        
+    </nav>
+
+
+  <form method="POST" action= "/search">
+        <input type="text" name="search" id="search">
+        <input type="submit" value="Search">
+    </form>
+
+  <div class="filter-panel">
+
+   <form method="GET" action= "/filter/cuisine">
+      <label for="cuisine">Cuisine</label>
+      <select name="cuisine" id="cuisine">
+         <option value="">All</option>
+         {% for item in filters['cuisine'] %}
+            <option value="{{ item }}">{{ item.capitalize() }}</option>
+         {% endfor %}
+      </select>
+      <button type="submit">Apply</button>
+   </form>
+
+   <form method="GET" action= "/filter/difficulty">
+      <label for="difficulty">Difficulty</label>
+      <select name="difficulty" id="difficulty">
+         <option value="">All</option>
+         {% for item in filters['difficulty'] %}
+            <option value="{{ item }}">{{ item.capitalize() }}</option>
+         {% endfor %}
+      </select>
+      <button type="submit">Apply</button>
+   </form>
+
+      <form method="GET" action= "/filter/dietary">
+      <label for="dietary">Dietary</label>
+      <select name="dietary" id="dietary">
+         <option value="">All</option>
+         {% for item in filters['dietary'] %}
+            <option value="{{ item }}">{{ item.capitalize() }}</option>
+         {% endfor %}
+      </select>
+      <button type="submit">Apply</button>
+   </form>
+</div>
+
+	
+    <main>
+
+    {% block main %}
+		
+   
+  
+			<table>
+				<thead>
+					<tr>
+						<th>Recipe Name</th>
+						<th>Main Ingredients</th>
+						<th>Prep Time</th>
+						<th>Cook Time</th>
+						<th>Cuisine</th>
+						<th>Dietary Tag</th>
+						<th>Difficulty</th>
+					</tr>
+				</thead>
+                <tbody>
+                    {% for name in names %}
+                    <tr>
+                        <td>{{  name[0]  }}</td>
+                        <td>{{  name[1]  }}</td>
+                        <td>{{  name[2]  }}</td>
+                        <td>{{  name[3]  }}</td>
+                        <td>{{  name[4]  }}</td>
+                        <td>{{  name[5]  }}</td>
+                        <td>{{  name[6]  }}</td>                       
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+			</table>
+    {% endblock %}
+    </main>
+</body>
+</html>
+
+
+

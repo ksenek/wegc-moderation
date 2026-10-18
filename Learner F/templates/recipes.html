@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>{{ title }}</h2>
+
+    <div class="recipe-tiles">
+        {% for name in names %}
+        <div class="recipe-tile">
+
+             {% if name[7] %}
+                <img src="/static/{{ name[7] }}" alt="{{ name[0] }} image" class="recipe-img">
+            {% endif %}
+
+
+            <h3>{{ name[0] }}</h3>
+
+            <p><strong>Ingredients:</strong> {{ name[1] }}</p>
+            <p><strong>Prep Time:</strong> {{ name[2] }} min</p>
+            <p><strong>Cook Time:</strong> {{ name[3] }} min</p>
+            <p><strong>Cuisine:</strong> {{ name[4] }}</p>
+            <p><strong>Dietary:</strong> {{ name[5] }}</p>
+            <p><strong>Difficulty:</strong> {{ name[6] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

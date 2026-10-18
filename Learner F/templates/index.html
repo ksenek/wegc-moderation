@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  
+    {% extends "base.html" %}
+
+    {% block main %}
+	
+    <main>
+		<h2> Welcome!</h2>
+		<p>Dive in to a world of recipes and become a Master Chef, you got this!!!</p>  
+		
+		<p>Browse through different recipes and learn more about the cuisine, their difficulty, and what diets they please!</p>
+
+  <h2>{{title}}</h2>
+
+
+			<table>
+				<thead>
+					<tr>
+						<th>Recipe Name</th>
+						<th>Main Ingredients</th>
+						<th>Prep Time</th>
+						<th>Cook Time</th>
+						<th>Cuisine</th>
+						<th>Dietary Tag</th>
+						<th>Difficulty</th>
+					</tr>
+				</thead>
+                <tbody>
+                    {% for name in names %}
+                    <tr>
+                        <td>{{  name[0]  }}</td>
+                        <td>{{  name[1]  }}</td>
+                        <td>{{  name[2]  }}</td>
+                        <td>{{  name[3]  }}</td>
+                        <td>{{  name[4]  }}</td>
+                        <td>{{  name[5]  }}</td>
+                        <td>{{  name[6]  }}</td>                       
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+			</table>
+    {% endblock %}
+    </main>
+</body>
+</html>
+
+
+
