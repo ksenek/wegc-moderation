@@ -1,7 +1,7 @@
 # wegc-moderation
 ---
 
-## 🖼️ Important Note on Image Files (Case Sensitivity)
+## Important Note on Image Files (Case Sensitivity)
 
 GitHub Codespaces runs in a **Linux environment**, which is strictly **case-sensitive** regarding file paths (unlike Windows or macOS).
 
