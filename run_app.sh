@@ -1,11 +1,21 @@
 #!/bin/bash
 
-# Find all student directories matching the pattern "student_*"
-students=(student_*/)
+# Enable nullglob so empty matches don't break the array
+shopt -s nullglob
 
-# Check if any student directories exist
-if [ ${#students[@]} -eq 0 ] || [ ! -d "${students[0]}" ]; then
-    echo "No student directories found starting with 'student_'!"
+# Array to store Learner directories
+learners=()
+
+# Collect directories matching "Learner *" or "Learner*"
+for dir in Learner*/; do
+    if [ -d "$dir" ]; then
+        learners+=("$dir")
+    fi
+done
+
+# Check if any learner directories exist
+if [ ${#learners[@]} -eq 0 ]; then
+    echo "No directories found starting with 'Learner'!"
     exit 1
 fi
 
@@ -15,14 +25,14 @@ echo "=========================================="
 
 # Display menu options
 PS3="Enter the number of the student app to launch: "
-select dir in "${students[@]}"; do
+select dir in "${learners[@]}"; do
     if [ -n "$dir" ]; then
-        # Remove trailing slash for cleaner output
-        student_name="${dir%/}"
+        # Remove trailing slash for clean display
+        learner_name="${dir%/}"
         echo ""
-        echo "--> Launching app for: $student_name"
-        echo "--> Directory: $dir"
+        echo "--> Launching app for: $learner_name"
         
+        # Double quotes preserve spaces during directory navigation
         cd "$dir" || exit 1
         
         # Install dependencies if requirements.txt exists
