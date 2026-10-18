@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Recipe Categories</h1>
+
+<p class="page-intro">
+    Browse recipes by cuisine.
+</p>
+
+<div class="category-container">
+
+    {% for cuisine in cuisines %}
+
+        <a href="/category/{{ cuisine[0] }}" class="category-card">
+            {{ cuisine[0] }}
+        </a>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

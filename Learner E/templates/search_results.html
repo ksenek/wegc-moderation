@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<h1>Search Results</h1>
+
+<p class="page-intro">
+    Results for "{{ search }}"
+</p>
+
+{% if recipes %}
+
+    {% for recipe in recipes %}
+
+        <div class="recipe-card">
+
+            <h2>{{ recipe[1] }}</h2>
+
+            <p><strong>Cuisine:</strong> {{ recipe[2] }}</p>
+
+            <p><strong>Main Ingredients:</strong> {{ recipe[3] }}</p>
+
+            <p><strong>Dietary:</strong> {{ recipe[4] }}</p>
+
+            <p><strong>Difficulty:</strong> {{ recipe[5] }}</p>
+
+            <p><strong>Prep Time:</strong> {{ recipe[6] }} minutes</p>
+
+            <p><strong>Cook Time:</strong> {{ recipe[7] }} minutes</p>
+
+            <a href="/recipe/{{ recipe[0] }}" class="button">
+                View Recipe
+            </a>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No recipes found for "{{ search }}".</p>
+
+{% endif %}
+
+<a href="/search" class="button">Search Again</a>
+
+{% endblock %}

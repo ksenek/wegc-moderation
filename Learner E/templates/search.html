@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="search-page">
+
+    <h1>Search Recipes</h1>
+
+    <p>Find a recipe by entering its name below.</p>
+
+    <form action="/search-results" method="GET">
+
+        <input type="text"
+               name="search"
+               placeholder="Search recipe name"
+               required>
+
+        <button type="submit">Search</button>
+
+    </form>
+
+</div>
+
+{% endblock %}

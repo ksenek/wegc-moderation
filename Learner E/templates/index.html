@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <p class="small-title">
+            WELCOME TO RECIPE FINDER
+        </p>
+
+        <h1>
+            Find something delicious to cook
+        </h1>
+
+        <p class="hero-description">
+            Explore different recipes and cuisines.
+            Find something simple and delicious
+            to make for your next meal.
+        </p>
+
+        <a href="/recipes" class="button">
+            Explore Recipes
+        </a>
+
+    </div>
+
+</section>
+
+<section class="category-section">
+
+    <h2>
+        Browse by Cuisine
+    </h2>
+
+    <p>
+        Explore recipes from different cuisines.
+    </p>
+
+
+    <div class="categories">
+
+
+        <a href="/recipes?cuisine=Italian"
+           class="category">
+
+            <h3>Italian</h3>
+
+            <p>
+                Explore Italian recipes
+            </p>
+
+        </a>
+
+
+        <a href="/recipes?cuisine=Indian"
+           class="category">
+
+            <h3>Indian</h3>
+
+            <p>
+                Explore Indian recipes
+            </p>
+
+        </a>
+
+
+        <a href="/recipes?cuisine=Mexican"
+           class="category">
+
+            <h3>Mexican</h3>
+
+            <p>
+                Explore Mexican recipes
+            </p>
+
+        </a>
+
+
+        <a href="/recipes?cuisine=Chinese"
+           class="category">
+
+            <h3>Chinese</h3>
+
+            <p>
+                Explore Chinese recipes
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<section class="about-section">
+
+    <h2>
+        Find recipes easily
+    </h2>
+
+    <p>
+        Recipe Finder helps you explore different
+        meals and cuisines. You can browse all
+        recipes, search by recipe name, or choose
+        a cuisine to find something you would
+        like to cook.
+    </p>
+
+    <a href="/recipes" class="button">
+        View All Recipes
+    </a>
+
+</section>
+
+{% endblock %}

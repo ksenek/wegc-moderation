@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+{% if recipe %}
+
+<div class="recipe-details">
+
+    <h1>{{ recipe[1] }}</h1>
+
+    <p><strong>Cuisine:</strong> {{ recipe[2] }}</p>
+
+    <p><strong>Main Ingredients:</strong> {{ recipe[3] }}</p>
+
+    <p><strong>Dietary:</strong> {{ recipe[4] }}</p>
+
+    <p><strong>Difficulty:</strong> {{ recipe[5] }}</p>
+
+    <p><strong>Prep Time:</strong> {{ recipe[6] }} minutes</p>
+
+    <p><strong>Cook Time:</strong> {{ recipe[7] }} minutes</p>
+
+    <a href="/recipes" class="button">Back to Recipes</a>
+
+</div>
+
+{% else %}
+
+<h1>Recipe Not Found</h1>
+
+<p>This recipe could not be found.</p>
+
+<a href="/recipes" class="button">Back to Recipes</a>
+
+{% endif %}
+
+{% endblock %}
