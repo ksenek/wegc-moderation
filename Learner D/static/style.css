@@ -1,0 +1,419 @@
+/*main body styling*/
+
+body {
+    margin: 0;
+    font-family: "gerogia", serif;
+    font-weight: 300; 
+    background-color:#f5f2ec;
+    color: #3b3b3b;
+    line-height: 1.6;
+
+}
+
+/*navgation bar header*/
+
+/* Positions the logo on the left and the links on the right */
+.top-bar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0d7c8;
+  z-index: 10; 
+}
+
+
+
+
+.logo {
+  font-size: 22px;
+  color: #8c6b4f;
+}
+
+/* styles the navigation links */
+nav a {
+  text-decoration: none;
+  color: #3b3b3b;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+/* Changes link colour when hovered */
+nav a:hover {
+  color: #8c6b4f;
+}
+
+
+
+
+/*hero section styling*/
+h1,h2,h3 {
+    color: #3b3b3b;
+    margin-top: 0;
+    font-weight: 300;
+}
+
+/* The big intro box at the top of the page */
+.hero_box {
+    background: linear-gradient(135deg,#f5f2ec, #e3dacb ); /*This creates a smooth diagonal fade between two colours for the background*/
+    padding: 80px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0d7c8;
+}
+    
+/* The main heading inside the hero box */
+.hero_box h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+/* The paragraph inside the hero box */
+.hero_box p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+/*buttons styling*/
+button { 
+  display: inline-block; 
+  padding: 10px 22px;
+  border: none;
+  border-radius: 999px; 
+  background-color: #8c6b4f; 
+  color: #fff; 
+  font-size: 14px; 
+  font-weight: 300; 
+  font-family: inherit; 
+  cursor: pointer; 
+  /* this Smoothly animates changes over 0.2 seconds */
+  transition: all 0.2s ease-in-out;
+}
+
+/*when user hovers over the button*/
+button:hover {
+   background-color: #a37e5e; 
+   transform: translateY(-2px)scale(1.04); /*when the button is interacted, it lifts up and glows slightly*/
+   box-shadow: 0 5px 15px rgba(140, 107, 79, 0.4);
+}
+
+/*when the user clicks the button*/
+button:active {
+    transform: translateY(1px) scale(0.98); /*lifts up and slight glow*/
+    box-shadow: 0 2px 5px rgba(140, 107, 79, 0.4); /*this shrinks the shadow*/
+
+}
+
+/*Main content and bird cards*/
+.main_content {
+    padding: 40px;
+}  /*this adds spacing around the main content under hero section*/
+
+/* styles “Featured birds” heading */
+.main_content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* styles the main box for each bird card */
+.bird_card {
+  background-color: white;
+  border: 1px solid #e0d7c8;
+  border-radius: 12px;
+  padding: 18px;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+min-height: 400px;
+}
+
+
+
+
+/* horizontal Layout for the bird cards */
+.bird_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+/* Styles the bird heading (bolds it) inside the card */
+.bird_card h3 {
+  font-size: 20px;
+  color: #8c6b4f;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* changes border color when user hovers over the card */
+.bird_card:hover {
+  border-color: #8c6b4f;
+}
+
+/*footer*/
+footer {
+  clear: both; /*this forces the footer down any grid elements layout blocks*/
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 1px solid #e0d7c8;
+  font-size: 14px;
+  color: #3b3b3b;
+}
+
+
+
+/* Styles the images inside the bird cards */
+.bird_card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color:#faf8f5;
+}
+
+/* Adds space above the second category title line */
+.main_content h2 {
+  margin-top: 30px;
+}
+
+
+
+/*image layout and boxes*/
+.main_content {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.main_content .about_layout .image-only-card {
+  min-height: auto;
+  padding: 30px;              
+}
+
+/* sets up the 2column grid for the About page */
+.main_content .about_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 24px;
+}
+
+/* forces the top card to span both boxes below */
+.main_content .bird_container .wide_card {
+  grid-column: span 2;
+}
+
+/* natural proportions for the image card container */
+.main_content .bird_container .image-only-card {
+  padding: 12px;
+  display: block;             
+  background-color: #faf8f5;  
+  overflow: hidden;          
+}
+
+/* scales the image cleanly inside its specific card frame*/ 
+.main_content .about_grid .image-only-card img {
+  width: 100%;
+  height: auto;               
+  max-height: none;           
+  object-fit: contain;        
+  margin-bottom: 0;
+  border-radius: 8px;         
+}
+
+/*fixes text inside the white box on the about page */
+.about_grid .bird_card {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  min-height: 100%;
+  padding: 35px;
+}
+
+/* title in the white box (About this guide)*/
+.about_grid .bird_card h2 {
+  font-size: 38px;         
+  font-weight: 700;       
+  margin-bottom: 12px;    
+  line-height: 1.2;
+}
+
+
+
+/*Species page styling*/
+
+/*this arranges the bird cards into a row of 4 across the page*/
+.species_grid {
+display:grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+align-items: start;
+margin-bottom: 40px;
+}
+
+
+
+/*styles only the bird cards on species page*/
+.species_grid .bird_card {
+  min-height: auto; 
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+
+
+
+/*styles all the plain paragraphs inside the species cards together */
+.species_grid .bird_card p {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/*styles the clickable drop down element details arrow link button */
+.species_grid .bird_card summary {
+  font-size: 14px;
+  color: #8c6b4f;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 0;
+  margin-top: auto; 
+}
+
+
+
+/* changes <summary> button font color and adds an underline when hovered */
+.species_grid .bird_card summary:hover {
+  color: #c7a485;
+  text-decoration: underline;
+}
+
+/*adds space between the drop down button and below text*/
+.species_grid .bird_card .expanded_info {
+  margin-top: 8px;
+  border-top: 1px solid #f2ede4;
+  padding-top: 8px;
+}
+
+
+/* makes all species page bird images match in size and layout */
+
+.species_grid .bird_card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain; /* crops photos evenly into clean matching blocks */
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background-color: #faf8f5;
+}
+
+
+
+
+
+
+/*Gallery page styling*/
+
+/*sets up the 3 column structure */
+.gallery_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/*strips padding so images fill the solid boxes edge-to-edge */
+.gallery_grid .bird_card {
+    padding: 0; 
+    overflow: hidden;
+    min-height: auto; 
+}
+
+/*forces the image to expand and fill the box space cleanly */
+.gallery_grid .full_box_img {
+    width: 100%;
+    height: 100%;
+    max-height: none; 
+    margin-bottom: 0;
+    object-fit: cover;
+}
+
+/*controls box shapes and heights exactly like your sketch */
+.gallery_grid .card_standard { 
+    height: 260px; 
+} 
+
+/*tall box spans down the right column */
+.gallery_grid .bird_card.card_tall { 
+    height: 540px; 
+    grid-row: span 2; 
+} 
+
+/*wide box stretches across 2 columns and shrinks down */
+.gallery_grid .card_wide { 
+    height: 260px;
+    grid-column: span 2; 
+    align-self: start;
+} 
+
+
+
+/*Hover Tooltip */
+
+/* anchors the tooltip inside the box */
+.gallery_grid .bird_card {
+    position: relative;
+}
+
+/* styles the grey tab and hides it just below the card edge */
+.gallery_tooltip {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: rgba(59, 59, 59, 0.9);    color: #f5f2ec;
+    font-size: 14px;
+    line-height: 45px;
+    text-align: center;
+    transition: bottom 0.2s ease; /* makes the tooltip slide smoothly*/
+}
+
+/* slides the tab up into view when hovered */
+.gallery_grid .bird_card:hover .gallery_tooltip {
+    bottom: 0;
+}
+
+
+
+
+/*search bar Styling */
+.hero_box .search-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 450px;
+}
+
+.hero_box .search-form input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #e0d7c8;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    color: #3b3b3b;
+    background-color: #ffffff;
+}
+
+.search-form input:focus {
+    border-color: #8c6b4f;
+}
+

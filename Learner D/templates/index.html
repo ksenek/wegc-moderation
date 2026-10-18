@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+<!-- Hero section (big intro at the top of my page)-->
+ <div class = "hero_box">
+    <h1>All about wild birds</h1>
+    <p>learn more about different species, where they live and facts about them!</p>
+    <a href="/birds" class="button">See birds</a>
+
+ </div>
+
+<!-- main content-->
+<div class = "main_content">
+
+<!--section heading-->
+<h2>Featured birds</h2>
+
+<!-- holds all bird cards-->
+<div class = "bird_container">
+
+<!-- Individual bird card -->
+ <div class = "bird_card">
+    <h3>peregrine falcon</h3>
+   
+    <img src="{{ url_for('static', filename='images/5.jpg') }}" alt="Peregrine Falcon">
+
+    <p>Size: Medium</p>
+    <p>habitat: Cliffs</p>
+    <p>Species type: Raptor</p>
+</div>
+
+<div class = "bird_card">
+    <h3>Blue jay</h3>
+    <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Blue Jay">
+    <p>Size: small</p>
+    <p>habitat: Woodlands</p>
+    <p>Species type: Songbird</p>
+</div>
+
+<div class = "bird_card">
+    <h3>Golden eagle</h3>
+    <img src="{{ url_for('static', filename='images/25.jpg') }}" alt="Golden Eagle">
+    <p>Size: Large</p>
+    <p>Habitat: Mountains</p>
+    <p>Species type: Raptor</p>
+</div>
+
+</div>
+
+</div>
+
+
+  {% endblock %}

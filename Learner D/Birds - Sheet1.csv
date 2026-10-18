@@ -1,0 +1,27 @@
+id,bird_name,species_type,habitat,region,size_category,max_wingspan_cm,flight_ability,diet,conservation_status,max_lifespan_years,vocal_style,migratory,color_pattern
+1,House Sparrow,Songbird,Urban,Worldwide,Small,25,Can Fly,Omnivore,Least Concern,5,Chirp,No,Brown/Grey
+2,European Robin,Songbird,Forest,Europe,Small,21,Can Fly,Insectivore,Least Concern,2,Song,Partial,Red Breast
+3,Blue Jay,Songbird,Woodland,North America,Medium,43,Can Fly,Omnivore,Least Concern,7,Call,Partial,Blue/White
+4,Bald Eagle,Raptor,Mountains,North America,Large,230,Can Fly,Carnivore,Least Concern,20,Screech,Partial,Brown/White
+5,Peregrine Falcon,Raptor,Cliffs,Worldwide,Medium,120,Can Fly,Carnivore,Least Concern,13,Screech,Yes,Grey/Black
+6,Mallard Duck,Waterfowl,Wetlands,Worldwide,Medium,98,Can Fly,Omnivore,Least Concern,10,Quack,Yes,Green Head/Grey
+7,Great Horned Owl,Owl,Forest,Americas,Large,145,Can Fly,Carnivore,Least Concern,13,Hoot,No,Brown
+8,Kiwi (Brown Kiwi),Ground Bird,Forest,New Zealand,Medium,0,Flightless,Omnivore,Vulnerable,50,Call,No,Brown
+9,Northern Mockingbird,Songbird,Woodland,North America,Medium,38,Can Fly,Omnivore,Least Concern,8,Vocal Mimic,No,Grey/White
+10,Scarlet Macaw,Parrot,Forest,Americas,Large,100,Can Fly,Omnivore,Least Concern,50,Loud Squawk,No,Red/Yellow/Blue
+11,Mute Swan,Waterfowl,Wetlands,Worldwide,Very Large,240,Can Fly,Herbivore,Least Concern,19,Hiss/Grunt,Partial,White
+12,Common Kingfisher,Shorebird,Rivers,Worldwide,Small,25,Can Fly,Carnivore,Least Concern,7,Chatter,Partial,Blue/Orange
+13,Eurasian Collared-Dove,Dove/Pigeon,Urban,Worldwide,Medium,55,Can Fly,Herbivore,Least Concern,8,Coo,No,Grey-Buff/Black Collar
+14,African Grey Parrot,Parrot,Forest,Africa,Medium,52,Can Fly,Omnivore,Endangered,50,Mimic,No,Grey/Red
+15,Cockatiel,Parrot,Grassland,Australia,Small,33,Can Fly,Omnivore,Least Concern,15,Whistle,Nomadic,Grey/Yellow
+16,Emu,Ground Bird,Grassland,Australia,Very Large,20,Flightless,Omnivore,Least Concern,20,Dark Call,Nomadic,Brown
+17,Ostrich,Ground Bird,Grassland,Africa,Very Large,200,Flightless,Omnivore,Least Concern,40,Boom,No,Black/Grey
+18,Wandering Albatross,Seabird,Ocean,Southern Oceans,Very Large,350,Can Fly,Piscivore,Vulnerable,50,Shriek,Yes,White/Black
+19,Eurasian Tree Sparrow,Songbird,Urban,Europe/Asia,Small,21,Can Fly,Omnivore,Least Concern,3,Chirp,No,Rich Brown/Black Cheek
+20,Kākā,Parrot,Forest,New Zealand,Medium,60,Can Fly,Omnivore,Vulnerable,20,Harsh Call,No,Olive-Brown/Red
+21,Goose,Waterfowl,Farmland/Wetlands,Worldwide,Large,165,Can Fly,Herbivore,Least Concern,20,Honk,No,White/Grey
+22,Ruby-throated Hummingbird,Songbird,Gardens,North America,Small,11,Can Fly,Nectarivore,Least Concern,5,Twitter,Yes,Green/Red
+23,Sulphur-crested Cockatoo,Parrot,Forest,Australia,Large,103,Can Fly,Omnivore,Least Concern,40,Loud Screech,No,White/Yellow
+24,Rock Dove,Dove/Pigeon,Urban,Worldwide,Medium,68,Can Fly,Omnivore,Least Concern,6,Coo,No,Grey/Blue
+25,Golden Eagle,Raptor,Mountains,Northern Hemisphere,Large,234,Can Fly,Carnivore,Least Concern,23,Yelp,Partial,Dark Brown
+26,Chipping Sparrow,Songbird,Gardens,North America,Small,21,Can Fly,Omnivore,Least Concern,3,Twitter,Yes,Grey/Chestnut Cap

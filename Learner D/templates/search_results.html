@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="hero_box">
+    <h1>Search Results</h1>
+    <p>Showing matching results for: "<strong>{{ search_term }}</strong>"</p>
+
+    <!-- search bar -->
+     <form class="search-form" method="POST" action="/search">
+        <input type="text" name="search" id="search" placeholder="Search birds..." required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="main_content">
+    <h2 class="directory_heding">Matching Birds</h2>
+
+    {% if birds %}
+    <div class="species_grid">
+        {% for bird in birds %}
+        <div class="bird_card">
+
+    <!--displays each bird card with its image, basic details and the dropdown for extra information-->
+            <img src="{{ url_for('static', filename='images/' + bird[0]|string + '.jpg') }}" alt="{{ bird[1] }}">
+
+            <h3>{{ bird[1] }}</h3>
+            <p><strong>Type:</strong> {{ bird[2] }}</p>
+            <p><strong>Habitat:</strong> {{ bird[3] }}</p>
+
+            <!-- the dropdown details (same as the species page dropdown) -->
+            <details>
+               <summary>View More Details</summary> 
+               <div class="expanded_info">
+                   <p><strong>Diet:</strong> {{ bird[4] }}</p>
+                   <p><strong>Region:</strong> {{ bird[5] }}</p>
+                   <p><strong>Size Category:</strong> {{ bird[6] }}</p>
+                   <p><strong>Max Wingspan:</strong> {{ bird[7] }} cm</p>
+                   <p><strong>Conservation:</strong> {{ bird[8] }}</p>
+                   <p><strong>Max Lifespan:</strong> {{ bird[9] }} Years</p>
+                   <p><strong>Flight Ability:</strong> {{ bird[10] }}</p>
+                   <p><strong>Vocal Style:</strong> {{ bird[11] }}</p>
+                   <p><strong>Migratory Status:</strong> {{ bird[12] }}</p>
+               </div>
+            </details>
+           
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+
+<!-- if the searched bird is not found-->
+     <div class="no_results">
+        <p>No birds matched your search. Try looking up something else!</p>
+        <a href="{{ url_for('birds') }}" class ="button">Back to Species Collection</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

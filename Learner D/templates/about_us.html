@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+<!-- hero section-->
+ <div class="hero_box">
+    <h1>About Us</h1>
+    <p>A simple website to learn about wild birds, their habitats and the unique traits that make each individual species unique!</p>
+ </div>
+
+ <!-- main content-->
+ <div class="main_content">
+   
+
+
+<!--info boxes-->
+<div class="about_grid">
+    
+    <!-- left box-->
+<div class="bird_card about_text_box">
+        <h2>About this guide</h2>
+        <h3>What this website provides</h3>
+        <p>This guide offers organised, easy‑to‑read details about various bird species. Each profile I write focuses on key aspects such as body size, natural habitat and feeding behavior to help you identify and learn about them quickly.</p>
+       
+        <p style="margin-top: 12px;
+        ">The website itself is designed to be simple, clear and accessible for anyone wanting to explore the world of wild birds. My goal is to remove the confusion of dense scientific text, creating a welcoming space where you can easily find the information you need to appreciate the different variety of birds outside.</p>
+</div>
+
+    <!-- right box-->
+    <div class="bird_card image-only-card">
+        <img src="{{ url_for('static', filename='images/about.jpg') }}" alt="Wild Bird Frame">
+    </div>
+</div>
+    
+</div>
+
+
+    {% endblock %}
+
+    

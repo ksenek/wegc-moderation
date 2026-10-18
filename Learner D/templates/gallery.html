@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+
+<div class="hero_box">
+    <h1>Bird Gallery</h1>
+    <p>Below are a small variety of images you can browse through.</p>
+</div>
+
+<div class="main_content">
+    <h2 class="directory_heading">Image Gallery</h2>
+
+    <div class="gallery_grid">
+        
+        <!-- Card 1 -->
+        <div class="bird_card card_standard">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery1.jpg') }}" alt="Albatross flying over ocean">
+            <div class="gallery_tooltip">Wandering Albatross</div>
+            
+            
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bird_card card_standard">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery2.jpg') }}" alt="Bald eagle with baby eagle in nest">
+            <div class="gallery_tooltip">Bald eagle with Eaglet</div>
+        </div>
+
+        <!-- Card 3  -->
+        <div class="bird_card card_tall">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery3.jpg') }}" alt="Swan head and neck close up">
+            <div class="gallery_tooltip">Mute Swan</div>
+        </div>
+
+        <!-- Card 4 -->
+        
+        <div class="bird_card card_wide">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery4.jpg') }}" alt="Female and male mallard ducks swimming in water">
+            <div class="gallery_tooltip">Female (left) and male (right) Mallard Ducks</div>
+        </div>
+
+        <!-- Card 5 -->
+         <div class="bird_card card_standard">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery5.jpg') }}" alt="Female House Sparrows on fence">
+            <div class="gallery_tooltip">Female House Sparrows</div>
+        </div>
+
+        <!-- Card 6 -->
+         <div class="bird_card card_standard">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery6.jpg') }}" alt="Red Macaw Parrot eating walnut">
+            <div class="gallery_tooltip">Scarlet Mawcaw</div>
+        </div>
+
+        <!-- Card 7 -->
+           <div class="bird_card card_standard">
+            <img class="full_box_img" src="{{ url_for('static', filename='images/Gallery7.jpg') }}" alt="Blue jay">
+            <div class="gallery_tooltip">Blue jay</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+    {% endblock %}
+
+    
