@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Guide</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="heading_container">
+        <div class="left_bar">
+            <header>
+                <img src="{{ url_for('static', filename='images/MTG.png') }}" alt="Media Guide Logo" width = 90>
+                <h1>Media Guide</h1>
+            </header>
+        </div>
+
+        <div class="right_bar">
+            <nav>
+                <ul class="nav_links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/media/Movies">Movies</a></li>
+                    <li><a href="/media/TV Shows">TV Shows</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <form method="POST" action="/search">
+        <div class="search_bar">
+            <input type="text" name="search" id="search">
+            <input type="submit" value="Search">
+        </div>
+
+        <div class="filter_bar">
+            <label for="age_rating">Age Rating </label>
+
+            <select name="age_rating" id="age_rating">
+                <option value="">All</option> 
+                {% for item in filters.age_rating %}
+                    <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="year">Year </label>
+            <select name="year" id="year">
+                <option value="">All</option>
+                {% for item in filters.year %}
+                    <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            
+            <input type="submit" value="Filter">
+        </div>  
+    </form>
+
+    <main>
+    {% block main %}
+    
+    {% endblock %}
+    </main>
+</body>
+</html>
+
+
