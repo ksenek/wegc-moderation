@@ -1,5 +1,13 @@
 # wegc-moderation
+---
 
+## 🖼️ Important Note on Image Files (Case Sensitivity)
+
+GitHub Codespaces runs in a **Linux environment**, which is strictly **case-sensitive** regarding file paths (unlike Windows or macOS).
+
+* **Issue:** Images may fail to load due to discrepencies between the system the student built their web app on and the Linux environment provided by Codespaces.
+
+  
 # Student Flask Applications Preview
 
 This repository hosts Flask applications for multiple learners (`Learner A` through `Learner F` for external moderation). It is configured to run entirely inside **GitHub Codespaces** without requiring any local VS Code setup or file downloads.
@@ -55,6 +63,7 @@ Solution: If the menu didn't pop up in the terminal when the environment loaded,
 
 If Permission Denied: Run this command to make the script executable, then run it again: 
 chmod +x run_app.sh && ./run_app.sh
-3. Type the following command and press **Enter**:
-   ```bash
+
+Type the following command and press **Enter**: 
+```bash
    ./run_app.sh
