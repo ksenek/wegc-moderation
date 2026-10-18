@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Browse a range of Movies and TV Shows, view runtime, platform availability, genre, age rating and more.">
+    <title>Movies TV Guide</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="tooltip-container">
+                <li class="logo-button"><a class="logo" href="/">Movie and TV Guide</a></li>
+                <li class="tooltip-content">Click to return to home page</li>
+            </ul>
+            <ul class="main-buttons">
+                <li><a href="/movies_tv_shows/DisplayAll">Browse all Movie and TV</a></li>
+                <li><a href="/movies_tv_shows/Movie">Browse Movies</a></li>
+                <li><a href="/movies_tv_shows/TVShow">Browse TV Shows</a></li>
+                <li><a href="/movies_tv_shows/ReleaseDates">All Release Dates</a></li>
+            </ul>
+        
+            <form method = "POST" action="/search">
+                <input type="text" name="search" id="search" placeholder="Search movies and TV shows...">
+                <input type="submit" value="Search">
+                <a href="/movies_tv_shows/DisplayAll" class="button">Clear search</a>
+            </form>
+
+            <form method = "GET" action="/movies_tv_shows/{{ type }}">
+                <label for="type">Select content: </label>
+                <select name="type" id="type">
+                    <option value="">All</option>
+                    {% for item in filters.type %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select> 
+
+                <label for="genre_name">Select genre: </label>
+                <select name="genre_name" id="genre_name">
+                    <option value="">All</option>
+                    {% for item in filters.genre_name %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select> 
+
+                <label for="general_age_rating">Select age rating: </label>
+                <select name="general_age_rating" id="general_age_rating">
+
+                    <option value="">All</option>
+                    {% for item in filters.general_age_rating %}
+                        <option value="{{ item }}">{{ item }}</option>
+                    {% endfor %}
+                </select> 
+
+                <input type="submit" value="Apply selected filters">
+                <a href="/movies_tv_shows/{{ type }}" class="button">Remove filters</a>
+            </form>
+        </nav>
+    </header>
+
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+</body>
+</html>

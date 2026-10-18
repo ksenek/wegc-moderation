@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Browse a range of Movies and TV Shows, view runtime, platform availability, genre, age rating and more.">
+    <title>Movies and TV Show Guide</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/9f1ac4b19e.js" crossorigin="anonymous"></script>
+</head>
+{% extends "base.html" %}
+
+<main>
+    {% block main %}
+    {% if title == "Movie" %}
+        {% set title = "Browse All Movies" %}
+
+    {% elif title == "TVShow" %}
+        {% set title = "Browse All TV Shows" %}
+
+    {% elif title == "DisplayAll" %}
+        {% set title = "Browse All Movies and TV Shows" %}
+    
+    {% elif title == "Homepage" %}
+        {% set title = "Cannot filter from homepage. Please naviagte to browse pages to filter." %}
+
+    {% endif %}
+
+    {% if title == "ReleaseDates"%}
+        {% set title = "All Release Dates of Movie and TV" %}
+        <h1>{{ title }}</h1>
+        <div class="container">
+            {% set ns = namespace(count = 1) %}
+            {% for name in names %}
+            <section class="number">
+               <h2>{{ ns.count }}</h2>
+                {% set ns.count = ns.count + 1 %}
+            </section>
+            <section class="year">
+               <h2>{{ name[1] }}</h2>
+            </section>
+            <section class="genre">
+               <h2>{{ name[4] }}</h2>
+            </section>
+            <section class="main-section">
+               <h2>{{ name[0] }}</h2>
+            </section>
+            
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <h1>{{ title }}</h1>
+        <div class="tiles-container">
+        {% for name in names %}
+            <div class = "tile">
+                <div class = "rating-icon">
+                    <p>{{ name[2] }} <i class="fa-solid fa-star"></i></p>
+                </div>
+                <img src="{{ url_for('static', filename='images/' ~ name[0])}}.webp" alt="{{ name[0] }} poster">
+                <div class = "dropdown">
+                    <p>More information</p>
+                    <div class = "dropdown-content">
+                        <p>Genre: {{ name[4] }}</p>
+                        <p>Age Rating: {{ name[5] }}</p>
+                        <p>Platform: {{ name[6] }}</p>
+                        <p>Language: {{ name[7] }}</p>
+                    </div>
+                </div>
+                <p class = "runtime">Runtime: {{ name[3] }}</p>
+                <p>{{ name[0] }}</p>
+            </div>
+            
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endblock %}
+</main>

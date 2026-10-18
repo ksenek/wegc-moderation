@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Browse a range of Movies and TV Shows, view runtime, platform availability, genre, age rating and more.">
+    <title>Movies and TV Show Guide</title>
+    <link type="text/css" rel="stylesheet" href="/static/css/style.css">
+</head>
+{% extends "base.html" %}
+<main>
+    {% block main %}
+        <div class="homepage">
+            {% set random_name = names | random %}
+            <img class="homepage-image" src="{{ url_for('static', filename='images/' ~ random_name[0])}}.webp" alt = "{{ random_name[0] }} poster">
+            <h1>Welcome to your Movie and TV Guide!</h1>
+            <p>View all of your favourite movies and TV shows, and find new things to watch!</p>
+            <p><a href="/movies_tv_shows/DisplayAll">Browse all Movie and TV</a>: for those who are struggling to find something to watch, go to this page to see all the movies and TV shows out there!</p>
+            <p><a href="/movies_tv_shows/Movie">Browse Movies</a>: Not in the mood for a long-term commitment? Visit this page to find some of the best movies out there!</p>
+            <p><a href="/movies_tv_shows/TVShow">Browse TV Shows</a>: Sorted out your commitment issues? Visit this page to find some of the best TV shows out there!</p>
+            <p><a href="/movies_tv_shows/ReleaseDates">Release dates</a>: Visit this page to find out when your favourite movies and TV shows were released!</p>
+        </div>
+    {% endblock %}
+</main>
