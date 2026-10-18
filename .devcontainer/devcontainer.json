@@ -1,0 +1,18 @@
+{
+  "name": "Flask Apps Development Container",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.11-bullseye",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  },
+  "forwardPorts": [5000],
+  "portsAttributes": {
+    "5000": {
+      "label": "Flask Web App",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
