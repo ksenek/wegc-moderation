@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}All Movies{% endblock %}
+
+{% block main %}
+<h1>Movies list</h1>
+<aside>
+    <form method="POST" action="/search">
+        <input type="text" name="search" id="search">
+        <input type="submit" value="Search">
+    </form>
+</aside>
+<table>
+    <tbody>
+        {% for title in movies %}
+        <tr>
+            <td>{{ title[0] }}</td> <!--title-->
+            <td>{{ title[1] }}</td> <!--type-->
+            <td>{{ title[2] }}</td> <!--genre_id-->
+            <td>{{ title[3] }}</td> <!--platform_id-->
+            <td>{{ title[4] }}</td> <!--year-->
+            <td>{{ title[5] }}</td> <!--rating-->
+            <td>{{ title[6] }}</td> <!--age_rating-->
+            <td>{{ title[7] }}</td> <!--runtime_mins-->
+            <td>{{ title[8] }}</td> <!--language-->
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
