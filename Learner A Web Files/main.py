@@ -220,6 +220,6 @@ def render_search():
     return render_template('media.html', names=media_list, title=title, media_type=get_media_types(), filters=get_filters())
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
     
