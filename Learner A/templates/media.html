@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="media_title">
+    <h2>{{ title }}</h2>
+</div>
+
+    {% for media in names %}
+        <article class="media_item">
+            <h3>{{ media[0] }}</h3>
+            <img src="{{ url_for('static', filename='images/' ~ media[8]) }}" alt="{{ media[0] }} poster" width="70">
+            <p><strong>Genre:</strong> {{ media[1] }}</p>
+            <p><strong>Platform:</strong> {{ media[2] }}</p>
+            <p><strong>Year:</strong> {{ media[3] }}</p>
+            <p><strong>Rating:</strong> {{ media[4] }} / 10</p>
+            <p><strong>Age Rating:</strong> {{ media[5] }}</p>
+            <p><strong>Runtime:</strong> {{ media[6] }} mins</p>
+            <p><strong>Language:</strong> {{ media[7] }}</p>
+        </article>
+    {% else %}
+        <h4>No titles found matching this criteria.</h4>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
